@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<label id="name">Name User</label>
+	<button type="button" onclick="logOut()">Log Out</button>
+	<script type="text/javascript">
+	document.getElementById('name').innerHTML = sessionStorage.getItem("name");
+	function logOut(){
+     	let config = {
+          	method: 'GET',
+          	credentials: 'same-origin'
+      	};
+       	fetch("\Logout", config)
+           	.then(function(response){
+               	return response.json();
+           	})
+           	.then(function(data){
+               	if(data.redirect != null && data.redirect != undefined){
+               		sessionStorage.clear();
+               		window.location.href = data.redirect;
+               	}
+           	})
+           	.catch((e) => {
+           		console.log(e)
+           	})
+	}
+	</script>
+</body>
+</html>
