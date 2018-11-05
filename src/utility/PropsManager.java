@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.FileSystems;
+//import java.nio.file.FileSystems;
 //import java.nio.file.FileSystems;
 import java.util.Properties;
 
@@ -21,10 +21,10 @@ public class PropsManager {
 			//input = new FileInputStream(new File(fileDir+separator+"config.properties"));
 			//input = new FileInputStream(new File(System.getProperty("user.dir")+"\\config.properties"));
 			//input = new FileInputStream(new File(System.getProperty("user.dir")+"/config.properties"));
-			input = new FileInputStream(new File(System.getProperty("user.dir")+FileSystems.getDefault().getSeparator()+"config.properties"));
+			//input = new FileInputStream(new File(System.getProperty("user.dir")+FileSystems.getDefault().getSeparator()+"config.properties"));
 			//input = new FileInputStream(new File(System.getProperty("user.dir")+File.separator+"config.properties"));
 			//input = getClass().getClassLoader().getResourceAsStream("config.properties");
-			//input = new FileInputStream(new File("C:\\Users\\postgres\\Documents\\Eclipse Workspace\\MangaReader2\\config.properties"));
+			input = new FileInputStream(new File("C:\\Users\\Javier Delgado\\Documents\\Workspace Eclipse\\BibliotecaElLibrote\\config.properties"));
 			prop.load(input);
 		} catch (IOException ex) {
 			ex.printStackTrace();

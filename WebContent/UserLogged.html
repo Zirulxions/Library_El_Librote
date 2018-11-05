@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+  <link rel="icon" href="Materialize/images/icon.ico">
+  <meta charset="utf-8">
+  <title>Biblioteca El Librote</title>
+  <link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-	<label id="name">Name User</label>
-	<button type="button" onclick="logOut()">Log Out</button>
-	<script type="text/javascript">
-	document.getElementById('name').innerHTML = sessionStorage.getItem("name");
-	function logOut(){
-     	let config = {
-          	method: 'GET',
-          	credentials: 'same-origin'
-      	};
-       	fetch("\Logout", config)
-           	.then(function(response){
-               	return response.json();
-           	})
-           	.then(function(data){
-               	if(data.redirect != null && data.redirect != undefined){
-               		sessionStorage.clear();
-               		window.location.href = data.redirect;
-               	}
-           	})
-           	.catch((e) => {
-           		console.log(e)
-           	})
-	}
-	</script>
+<body style="background-image:url(Materialize/images/FondoMaderaSuave.jpg)">
+  <nav class="teal darken-2 white-tex">
+    <div class="nav-wrapper">
+      <a class="brand-logo right">
+        <img src="Materialize/images/icon.ico" style="width: 50px; height: 50px;">
+      </a>
+      <span id="Ced">Cedula Usuario</span>
+      <ul id="nav-mobile" class="left">
+        <li><a class="waves-effect waves-light btn" id="Start">Cerrar Sesion<i class="material-icons right">cloud</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+  
+
+  </div>
+  <script src="Materialize/js/jquery-3.3.1.min.js"></script>
+  <script src="js/Materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="Javascript/Logout.js"></script>
 </body>
 </html>

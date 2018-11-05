@@ -27,26 +27,13 @@ public class Logout extends HttpServlet {
 		JSONObject json = new JSONObject();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		if(session.isNew()) {
-			session.invalidate();
-			System.out.println("Noob.");
-			try {
-				json.put("status", 304).put("message", "No Session Online.").put("redirect", "/MangaReader2/Login.html");
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			out.print(json.toString());
-			
-		}else {
-			session.invalidate();
-			System.out.println("Logged Out.");
-			try {
-				json.put("status", 200).put("message", "Loggout Successful.").put("redirect", "/MangaReader2/Login.html");
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			out.print(json.toString());
-			
+		session.invalidate();
+		System.out.println("Logged Out.");
+		try {
+			json.put("status", 200).put("message", "Loggout Successful.").put("redirect", "Login.html");
+		} catch (JSONException e) {
+			e.printStackTrace();
 		}
+		out.print(json.toString());	
 	}
 }
