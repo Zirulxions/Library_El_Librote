@@ -1,10 +1,12 @@
-document.getElementById("ced").innerHTML = sessionStorage.getItem("Identity");
+//function $(id){
+//  document.getElementById(id);
+//}
 
 function logOut(){
   let config = {
     method: 'GET',
   };
-  fetch("./Logout", config)
+  fetch("./LogoutBiblioteca", config)
     .then(function(response){
     return response.json();
   })
@@ -19,4 +21,4 @@ function logOut(){
   })
 }
 
-$("Start").addEventListener("click", logOut);
+//$("Start").addEventListener("click", logOut);

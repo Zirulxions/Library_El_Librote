@@ -3,11 +3,11 @@
 <head>
   <link rel="icon" href="Materialize/images/icon.ico">
   <meta charset="utf-8">
-  <title>Biblioteca El Librote</title>
+  <title>Biblioteca El Librote - Bienvenido</title>
   <link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body style="background-image:url(Materialize/images/FondoMaderaSuave.jpg)">
+<body style="background-image:url(Materialize/images/FondoMaderaSuave.jpg)" onload="load()">
   <nav class="teal darken-2 white-tex">
     <div class="nav-wrapper">
       <a class="brand-logo right">
@@ -15,16 +15,32 @@
       </a>
       <span id="Ced">Cedula Usuario</span>
       <ul id="nav-mobile" class="left">
-        <li><a class="waves-effect waves-light btn" id="Start">Cerrar Sesion<i class="material-icons right">cloud</i></a></li>
+        <li><a class="waves-effect waves-light btn" id="Start" onclick="logOut()">Cerrar Sesion<i class="material-icons right">cloud</i></a></li>
       </ul>
     </div>
   </nav>
   <div class="container">
-  
-
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="Materialize/js/jquery-3.3.1.min.js"></script>
-  <script src="js/Materialize/js/materialize.min.js"></script>
+  <script src="Materialize/js/materialize.min.js"></script>
   <script type="text/javascript" src="Javascript/Logout.js"></script>
+  <script type="text/javascript" src="Javascript/SessionOnline.js"></script>
 </body>
 </html>

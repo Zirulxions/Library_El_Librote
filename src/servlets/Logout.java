@@ -1,4 +1,4 @@
-package java;
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@WebServlet("/Logout")
+@WebServlet("/LogoutBiblioteca")
 public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

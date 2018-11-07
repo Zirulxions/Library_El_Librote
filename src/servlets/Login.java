@@ -1,4 +1,4 @@
-package java;
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,7 +26,7 @@ import utility.PropsManager;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/Login")
+@WebServlet("/LoginBiblioteca")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Encrypt encPassword;
@@ -45,7 +45,6 @@ public class Login extends HttpServlet {
 		}
 	}
 
-	//@SuppressWarnings("unused")
 	private void validateLogin(Connection connection, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, JSONException, NoSuchAlgorithmException {
 		JSONObject reqBody = new JSONObject(request.getReader().lines().collect(Collectors.joining(System.lineSeparator())));
 		PropsManager prop = PropsManager.getInstance();
@@ -55,16 +54,15 @@ public class Login extends HttpServlet {
 		PreparedStatement stat = null;
 		String loginQuery = prop.getValue("query_logIn");
 		try {
-			String username = reqBody.getString("username");
+			Integer username = Integer.parseInt(reqBody.getString("ci"));
 			String password = reqBody.getString("password");
 			encPassword = new Encrypt(password);
 			stat = connection.prepareStatement(loginQuery);
-			stat.setString(1, username);
+			stat.setInt(1, username);
 			stat.setString(2, encPassword.returnEncrypt());
 			ResultSet res = stat.executeQuery(); //executeQuery retorna el valor, o no si no lo posee.
 			if(res.next()) {
-				username = reqBody.getString("username");
-				int type_id = res.getInt("type_id");
+				Integer type_id = res.getInt("id_tipo_persona");
 				if(checkUserType(type_id)) {
 					System.out.println("@@@ ADMIN @@@");
 					session = request.getSession();

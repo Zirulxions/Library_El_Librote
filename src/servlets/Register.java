@@ -1,4 +1,4 @@
-package java;
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,7 +44,7 @@ public class Register extends HttpServlet {
 		JSONObject json = new JSONObject();
 		PrintWriter out = res.getWriter();
 		try { 
-	        String id = reqBody.getString("cedula");
+	        int id = Integer.parseInt(reqBody.getString("cedula"));
 	        String name = reqBody.getString("nombre");
 	        String email = reqBody.getString("email");
 	        String direction = reqBody.getString("direccion");
@@ -53,14 +53,14 @@ public class Register extends HttpServlet {
 	        String signupQuery = prop.getValue("query_new");
         	encPassword = new Encrypt(password); //encrypt the password
             stat = myConnection.prepareStatement(signupQuery);
-            stat.setString(1, id);
+            stat.setInt(1, id);
             stat.setString(2, name);
             stat.setString(3, email);
             stat.setString(4, direction);
             stat.setString(5, encPassword.returnEncrypt());
             stat.executeUpdate();//use if no data will be returned... else use, executeQuery();
             System.out.println("Added to Database.");
-            json.put("status", 200).put("message", "Done");
+            json.put("status", 200).put("message", "Done").put("redirect", "Login.html");
         } catch (SQLException | JSONException e) {
             System.out.println("Error: " + e.getMessage());
         }

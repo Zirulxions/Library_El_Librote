@@ -1,6 +1,7 @@
 function $(id){
   return document.getElementById(id);
-}    
+}
+
 function logIn(){
   var data = {
     ci: $('ci').value,
@@ -11,14 +12,14 @@ function logIn(){
     method: 'POST',
     body: JSON.stringify(data),
   };
-  fetch("./Login", config)
+  fetch("./LoginBiblioteca", config)
     .then(function(response){
       return response.json();
     })
     .then(function(data){
-      console.log(data);
+      console.log(data.message);
       if(data.redirect != null && data.redirect != undefined){
-        sessionStorage.setItem("Identity",data.ci);
+        sessionStorage.setItem("user", $("ci").value);
         window.location.href = data.redirect;
       }
     })
