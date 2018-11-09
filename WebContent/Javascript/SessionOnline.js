@@ -2,9 +2,22 @@ function load(){
 	document.getElementById("Ced").innerHTML = sessionStorage.getItem("user");
 }
 
-function newFile(){
-
-}
+/*function newFile(){
+	var formData = new FormData();
+	formData.append("file", document.getElementById("file").files[0]);
+	let config{
+		method: 'POST',
+		body: formData,
+		header: {'Content-Type':'multipart/form-data'},
+	}
+	fetch("./UploadNewFile", config)
+	.then(function(response)){
+		return response.json();
+	}
+	.then(function(formData){
+        console.log(formData);
+    })
+}*/
 
 /*
 function uploadFiles() {

@@ -18,8 +18,6 @@ function createAccount(){
     fetch("./Register", config)
     .then(function(response){
         return response.json();
-        var guebo = data.message;
-        console.log(guebo);
     })
     .then(function(data){
         console.log(data);
