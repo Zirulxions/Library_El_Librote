@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="Materialize/images/icon.ico">
+	<meta charset="utf-8">
+  	<title>Biblioteca El Librote - Iniciar Sesion</title>
+  	<link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body style="background-image:url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;">
+	<nav class="teal darken-2 white-text">
+    	<div class="nav-wrapper">
+      		<a class="brand-logo right">
+        		<img src="Materialize/images/icon.ico" style="width: 50px; height: 50px;">
+      		</a>
+      		<span id="Ced">Cedula Usuario</span>
+      		<ul id="nav-mobile" class="left">
+        	<li><a id="Start">Cerrar Sesion</a></li>
+        	<li><a href="UploadBook.html">Subir un Libro</a></li>
+        	<li><a href="Bills.html">Ver Multas</a></li>
+        	<li><a href="EditUser.html">Configurar Cuenta</a></li>
+      	</ul>
+    	</div>
+  	</nav>
+	<div class="container">
+		<div class="col s12 m7">
+	    	<div class="card horizontal">
+	      		<div class="card-stacked">
+	        		<div class="card-content">
+	        			<h2 class="header">Cambiar Contraseña</h2>
+	          			<div class="input-field col s6">
+          					<input id="oldPass" type="password" class="validate">
+          					<label for="oldPass" class="active">Contraseña Anterior</label>
+        				</div>
+        				<div class="input-field col s6">
+          					<input id="newPass" type="password" class="validate">
+          					<label for="newPass" class="active">Contraseña Nueva</label>
+        				</div>
+	        		</div>
+	        		<div class="card-action">
+	          			<button class="btn waves-effect waves-light col s5 push-s7" type="submit" name="action" id="cambiarPass">Cambiar
+    						<i class="material-icons right">send</i></button>
+	        		</div>
+	      		</div>
+	    	</div>
+		</div>
+		<div class="col s12 m7">
+	    	<div class="card horizontal">
+	      		<div class="card-stacked">
+	        		<div class="card-content">
+	        			<h2 class="header">Cambiar Email</h2>
+	          			<div class="input-field col s6">
+          					<input id="oldEmail" type="password" class="validate">
+          					<label for="oldEmail" class="active">Email Anterior</label>
+        				</div>
+        				<div class="input-field col s6">
+          					<input id="newEmail" type="password" class="validate">
+          					<label for="newEmail" class="active">Email Nuevo</label>
+        				</div>
+	        		</div>
+	        		<div class="card-action">
+	          			<button class="btn waves-effect waves-light col s5 push-s7" type="submit" name="action" id="cambiarEmail">Cambiar
+    						<i class="material-icons right">send</i></button>
+	        		</div>
+	      		</div>
+	    	</div>
+		</div>
+		<div class="col s12 m7">
+	    	<div class="card horizontal">
+	      		<div class="card-stacked">
+	        		<div class="card-content">
+	        			<h2 class="header">Actualizar Nombre</h2>
+        				<div class="input-field col s6">
+          					<input id="oldName" type="password" class="validate">
+          					<label for="newName" class="active">Inserte Nombre</label>
+        				</div>
+	        		</div>
+	        		<div class="card-action">
+	          			<button class="btn waves-effect waves-light col s5 push-s7" type="submit" name="action" id="cambiarNombre">Cambiar
+    						<i class="material-icons right">send</i></button>
+	        		</div>
+	      		</div>
+	    	</div>
+		</div>
+	</div>
+  	<script src="Materialize/js/jquery-3.3.1.min.js"></script>
+ 	<script src="Materialize/js/materialize.min.js"></script>
+ 	<script type="text/javascript" src="Javascript/SessionOnline.js"></script>
+</body>
+</html>

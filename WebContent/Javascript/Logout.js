@@ -1,5 +1,5 @@
 //function $(id){
-//  document.getElementById(id);
+ // document.getElementById(id);
 //}
 
 function logOut(){
@@ -21,4 +21,4 @@ function logOut(){
   })
 }
 
-//$("Start").addEventListener("click", logOut);
+document.getElementById("Start").addEventListener("click", logOut);

@@ -7,51 +7,76 @@
   <link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body style="background-image:url(Materialize/images/FondoMaderaSuave.jpg)" onload="load()">
-  <nav class="teal darken-2 white-tex">
+<body style="background-image:url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;" onload="load()">
+  <nav class="teal darken-2 white-text">
     <div class="nav-wrapper">
       <a class="brand-logo right">
         <img src="Materialize/images/icon.ico" style="width: 50px; height: 50px;">
       </a>
       <span id="Ced">Cedula Usuario</span>
       <ul id="nav-mobile" class="left">
-        <li><a class="waves-effect waves-light btn" id="Start" onclick="logOut()">Cerrar Sesion<i class="material-icons right">cloud</i></a></li>
+        <!--
+        <li><a class="waves-effect waves-light btn" id="">Cerrar Sesion<i class="material-icons right">cloud</i></a></li>
+        -->
+        <li><a id="Start">Cerrar Sesion</a></li>
+        <li><a href="UploadBook.html">Subir un Libro</a></li>
+        <li><a href="Bills.html">Ver Multas</a></li>
+        <li><a href="EditUser.html">Configurar Cuenta</a></li>
       </ul>
     </div>
   </nav>
   <div class="container">
-    <div class="row">
-      <div class="col s12 m12">
-        <div class="card-panel teal">
-          <form accept="application/pdf">
-          	<span class="card-title activator white-text" style="font-size: 23px">Solo se permiten subir archivos .PDF</span>
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>File</span>
-                <input type="file" accept="application/pdf">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" id="file" type="text" placeholder="Subir un Archivo .PDF" accept="application/pdf">
-              </div>
-            </div>
-          </form>
+    <div class="col s12 m12">
+      <div class="card horizontal">
+        <div class="card-image">
+          <embed src="Books/Software Libre Para Una Sociedad Libre.pdf" width= "300" height= "200">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title">Titulo del Libro</span>
+          </div>
+          <div class="card-action center-align">
+            <a href="#">Ir al Libro</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col s6 push-s6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Opciones Especiales</span>
+
+    <div class="col s12 m12">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title">Titulo del Libro</span>
           </div>
-          <div class="card-action">
-            <a href="#">Subir un Libro</a>
-            <a href="#">Ver Multas</a>
+          <div class="card-action center-align">
+            <a href="#">Ir al Libro</a>
+          </div>
+        </div>
+        <div class="card-image">
+          <embed src="Books/Software Libre Para Una Sociedad Libre.pdf" width= "300" height= "200">
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12">
+      <div class="card horizontal z-depth-5">
+        <div class="card-image">
+          <embed src="Books/Software Libre Para Una Sociedad Libre.pdf" width= "300" height= "200">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title">Titulo del Libro</span>
+          </div>
+          <div class="card-action center-align">
+            <a href="#">Ir al Libro</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <footer class="teal lighten-4">
+        © 2018 Copyright Reservado para la Biblioteca El Librote.
+        <a class="black-text right" href="https://github.com/Zirulxions">GitHub</a>
+  </footer>
   <script src="Materialize/js/jquery-3.3.1.min.js"></script>
   <script src="Materialize/js/materialize.min.js"></script>
   <script type="text/javascript" src="Javascript/Logout.js"></script>
