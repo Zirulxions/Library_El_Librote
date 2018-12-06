@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body style="background-image: url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;">
+<body style="background-image: url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;" onload="load();">
 	<nav class="teal darken-2 white-text">
     	<div class="nav-wrapper">
-      		<a class="brand-logo right">
+      		<a class="brand-logo right" href="UserLogged.html">
         		<img src="Materialize/images/icon.ico" style="width: 50px; height: 50px;">
       		</a>
       		<span id="Ced">Cedula Usuario</span>
@@ -32,10 +32,10 @@
 	  		          	<div class="file-field input-field">
 	              			<div class="btn">
 	                			<span>Seleccionar Archivo</span>
-	                			<input type="file" accept="application/pdf">
+	                			<input type="file" id="file" accept="application/pdf">
 	              			</div>
 	              			<div class="file-path-wrapper">
-	                			<input class="file-path validate" id="file" type="text" placeholder="Subir un Archivo .PDF" accept="application/pdf">
+	                			<input class="file-path validate" type="text" placeholder="Subir un Archivo .PDF" accept="application/pdf">
 	              			</div>
 	            		</div>
 	            		<div class="row">
@@ -54,9 +54,24 @@
 					       	<div class="input-field col s4">
 						    	<select class="browser-default" id="genero_libro">
 						      		<option value="" disabled selected>Categoria</option>
-						      		<option value="1">Opcion 1</option>
-						      		<option value="2">Opcion 2</option>
-						      		<option value="3">Opcion 3</option>
+						      		<option value="1">Policial</option>
+						      		<option value="2">Romantico</option>
+						      		<option value="3">Aventura</option>
+						      		<option value="4">Terror</option>
+						      		<option value="5">Ficcion/Realidad</option>
+						      		<option value="6">Ciencia Ficcion</option>
+						      		<option value="7">Investigacion</option>
+						      		<option value="8">Biografia</option>
+						      		<option value="9">Infantil</option>
+						      		<option value="10">Autoayuda</option>
+						      		<option value="11">Hogar</option>
+						      		<option value="12">Enciclopedia/Manual</option>
+						      		<option value="13">Politica</option>
+						      		<option value="14">Economia/Marketing</option>
+						      		<option value="15">Sociedad</option>
+						      		<option value="16">Deportes</option>
+						      		<option value="17">Viajes/Cultura</option>
+						      		<option value="18">Otros Temas/Varios</option>
 						    	</select>
 						  	</div>
 					  	</div>
@@ -74,7 +89,7 @@
 					  	</div>
 	          		</form>
 	          		<div class="card-action">
-		          		<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Subir Libro!</a>
+		          		<a class="waves-effect waves-light btn" id="upNewBook"><i class="material-icons right">cloud</i>Subir Libro!</a>
 		          		<a href="UserLogged.html">Volver a la pagina anterior</a>
 		        	</div>
 	        	</div>
@@ -95,5 +110,6 @@
     <script src="Materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="Javascript/UploadBook.js"></script>
     <script type="text/javascript" src="Javascript/SessionOnline.js"></script>
+    <script type="text/javascript" src="Javascript/Logout.js"></script>
 </body>
 </html>

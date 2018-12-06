@@ -7,10 +7,10 @@
   	<link rel="stylesheet" type="text/css" href="Materialize/css/materialize.min.css">
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body style="background-image:url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;">
+<body style="background-image:url(Materialize/images/FondoBiblioteca.jpg); background-repeat: no-repeat; background-attachment: fixed;" onload="load();">
 	<nav class="teal darken-2 white-text">
     	<div class="nav-wrapper">
-      		<a class="brand-logo right">
+      		<a class="brand-logo right" href="UserLogged.html">
         		<img src="Materialize/images/icon.ico" style="width: 50px; height: 50px;">
       		</a>
       		<span id="Ced">Cedula Usuario</span>
@@ -50,11 +50,11 @@
 	        		<div class="card-content">
 	        			<h2 class="header">Cambiar Email</h2>
 	          			<div class="input-field col s6">
-          					<input id="oldEmail" type="password" class="validate">
+          					<input id="oldEmail" type="text" class="validate">
           					<label for="oldEmail" class="active">Email Anterior</label>
         				</div>
         				<div class="input-field col s6">
-          					<input id="newEmail" type="password" class="validate">
+          					<input id="newEmail" type="text" class="validate">
           					<label for="newEmail" class="active">Email Nuevo</label>
         				</div>
 	        		</div>
@@ -71,7 +71,7 @@
 	        		<div class="card-content">
 	        			<h2 class="header">Actualizar Nombre</h2>
         				<div class="input-field col s6">
-          					<input id="oldName" type="password" class="validate">
+          					<input id="newName" type="text" class="validate">
           					<label for="newName" class="active">Inserte Nombre</label>
         				</div>
 	        		</div>
@@ -86,5 +86,7 @@
   	<script src="Materialize/js/jquery-3.3.1.min.js"></script>
  	<script src="Materialize/js/materialize.min.js"></script>
  	<script type="text/javascript" src="Javascript/SessionOnline.js"></script>
+ 	<script type="text/javascript" src="Javascript/UpdateUser.js"></script>
+ 	<script type="text/javascript" src="Javascript/Logout.js"></script>
 </body>
 </html>

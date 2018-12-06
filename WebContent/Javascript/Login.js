@@ -17,7 +17,7 @@ function logIn(){
       return response.json();
     })
     .then(function(data){
-      console.log(data.message);
+      alert(data.message);
       if(data.redirect != null && data.redirect != undefined){
         sessionStorage.setItem("user", $("ci").value);
         window.location.href = data.redirect;

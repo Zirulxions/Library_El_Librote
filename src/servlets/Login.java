@@ -23,9 +23,6 @@ import utility.DataBase;
 import utility.Encrypt;
 import utility.PropsManager;
 
-/**
- * Servlet implementation class Login
- */
 @WebServlet("/LoginBiblioteca")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -66,10 +63,14 @@ public class Login extends HttpServlet {
 				if(checkUserType(type_id)) {
 					System.out.println("@@@ ADMIN @@@");
 					session = request.getSession();
+					session.setAttribute("usr", username);
+					session.setAttribute("adm", "adminTrue");
 					jsonRet.put("status", 200).put("message", "Login successful").put("redirect", "UserLogged.html");
 				} else {
 					System.out.println("XXX Not Admin XXX");
 					session = request.getSession();
+					session.setAttribute("usr", username);
+					session.setAttribute("adm", "adminFalse");
 					jsonRet.put("status",404).put("message", "Login successful").put("redirect", "UserLogged.html");
 				}
 				session.setAttribute("usr", username);
