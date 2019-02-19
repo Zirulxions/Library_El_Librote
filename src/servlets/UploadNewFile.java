@@ -81,7 +81,42 @@ public class UploadNewFile extends HttpServlet {
 			System.out.println(msjL1L2L3);
 			//Fin funciones Random.
 			
-			jsonRet.put("status", 200).put("message", msjL1L2L3);
+			stmt = null;
+			result = null;
+			String NameB1 = null;
+			String NameB2 = null;
+			String NameB3 = null;
+			String DirB1 = null;
+			String DirB2 = null;
+			String DirB3 = null;
+			stmt = connection.prepareStatement(prop.getValue("query_getBook"));
+			stmt.setString(1, Integer.toString(L1));
+			result = stmt.executeQuery();
+			if(result.next()) {
+				DirB1 = result.getString("direccion_libro");
+				NameB1 = result.getString("nombre_libro");
+				stmt = null;
+				result = null;
+			}
+			stmt = connection.prepareStatement(prop.getValue("query_getBook"));
+			stmt.setString(1, Integer.toString(L2));
+			result = stmt.executeQuery();
+			if(result.next()) {
+				DirB2 = result.getString("direccion_libro");
+				NameB2 = result.getString("nombre_libro");
+				stmt = null;
+				result = null;
+			}
+			stmt = connection.prepareStatement(prop.getValue("query_getBook"));
+			stmt.setString(1, Integer.toString(L3));
+			result = stmt.executeQuery();
+			if(result.next()) {
+				DirB3 = result.getString("direccion_libro");
+				NameB3 = result.getString("nombre_libro");
+				stmt = null;
+				result = null;
+			}
+			jsonRet.put("status", 200).put("Lib1", NameB1).put("Dir1", DirB1).put("Lib2", NameB2).put("Dir2", DirB2).put("Lib3", NameB3).put("Dir3", DirB3);
 		} catch (SQLException e) {
 			System.out.println("Error: " + e.getMessage());
 		}

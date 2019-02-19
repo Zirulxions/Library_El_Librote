@@ -65,17 +65,17 @@ public class Login extends HttpServlet {
 					session = request.getSession();
 					session.setAttribute("usr", username);
 					session.setAttribute("adm", "adminTrue");
-					jsonRet.put("status", 200).put("message", "Login successful").put("redirect", "UserLogged.html");
+					jsonRet.put("status", 200).put("message", "Inicio de Sesion Correcto").put("redirect", "UserLogged.html");
 				} else {
 					System.out.println("XXX Not Admin XXX");
 					session = request.getSession();
 					session.setAttribute("usr", username);
 					session.setAttribute("adm", "adminFalse");
-					jsonRet.put("status",404).put("message", "Login successful").put("redirect", "UserLogged.html");
+					jsonRet.put("status",404).put("message", "Inicio de Sesion Correcto").put("redirect", "UserLogged.html");
 				}
 				session.setAttribute("usr", username);
 			} else {
-				jsonRet.put("status",500).put("message", "Invalid username or password");
+				jsonRet.put("status",500).put("message", "Usuario o Contraseña Invalidos");
 			}
 			out.print(jsonRet.toString());
 			
